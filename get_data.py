@@ -1,10 +1,12 @@
-#! /usr/bin/env python
+#! /usr/local/bin/python2.7
 
 import requests
-from getpass import getpass
 import sys
 from collections import Counter
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import sys
 
 def request(url, name, pw):
 	headers = {'Content-Type': 'application/json'}
@@ -62,7 +64,7 @@ def create_report(data, report_name):
 if __name__ == "__main__":
 	url = "https://jira.devops.mnscorp.net/rest/api/"
 	name = "mcharopkin"
-	pw = getpass()
+	pw = sys.argv[1]
 	json = request(url, name, pw)
 	colors = ['darkgray', 'yellowgreen', 'blue', 'green', 'red', 'cyan', 'magenta', 'yellow',
 		 'white']
