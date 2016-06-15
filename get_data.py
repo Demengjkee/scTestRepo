@@ -40,6 +40,14 @@ def parse_task_specific(json):
 	
 	return data;
 	
+def parse_done(json):
+	data = []
+	for obj in json['issues']:
+		status = obj['fields']['status']['name']
+		if status == "In Validation" or status == "Closed":
+			data.append(status)
+	return data
+	
 def get_labels(data):
 	labels = list(set(data))
 	return labels
@@ -70,4 +78,4 @@ if __name__ == "__main__":
 		 'white']
 	create_report(parse_assignee(json), "Assignee")
 	create_report(parse_task_specific(json), "Task specific")
-		
+	create_report(parse_done(json), "In Validation/Closed")
