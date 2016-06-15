@@ -75,7 +75,7 @@ if __name__ == "__main__":
 	pw = sys.argv[1]
 	json = request(url, name, pw)
 	colors = ['darkgray', 'yellowgreen', 'blue', 'green', 'red', 'cyan', 'magenta', 'yellow',
-		 'white']
+		'white', 'seagreen', 'navy', 'slateblue', 'orchid', 'sienna']
 	create_report(parse_assignee(json), "Assignee")
 	create_report(parse_task_specific(json), "Task specific")
 	create_report(parse_done(json), 'In Validation or Closed')
