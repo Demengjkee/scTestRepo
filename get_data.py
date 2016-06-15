@@ -78,4 +78,4 @@ if __name__ == "__main__":
 		 'white']
 	create_report(parse_assignee(json), "Assignee")
 	create_report(parse_task_specific(json), "Task specific")
-	create_report(parse_done(json), "In Validation/Closed")
+	create_report(parse_done(json), 'In Validation/Closed')
