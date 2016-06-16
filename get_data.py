@@ -1,4 +1,4 @@
-#! /usr/local/bin/python2.7
+#! /usr/bin/python
 
 import requests
 import sys
@@ -31,14 +31,14 @@ def parse_assignee(json):
 def parse_task_specific(json):
 	data = []
 	for obj in json['issues']:
-		tmp = obj['fields']['customfield_12756']
-		if tmp != None:
-			for i in tmp:
-				data.append(i['value'])
+		ts_values = obj['fields']['customfield_12756']
+		if ts_values != None:
+			for ts_value in ts_values:
+				data.append(ts_value['value'])
 		else:
 			data.append("None")
-	
-	return data;
+			
+	return data
 	
 def parse_done(json):
 	data = []
