@@ -10,7 +10,7 @@ import sys
 
 def request(url, name, pw):
 	headers = {'Content-Type': 'application/json'}
-	r = requests.get(url + "2/search?jql=project = AT AND createdDate >= -7d", 
+	r = requests.get(url + "2/search?jql=project = AT AND createdDate >= -30d", 
 		auth = (name, pw), headers = headers)
 	print "Status: " + str(r.status_code)
 	try:
